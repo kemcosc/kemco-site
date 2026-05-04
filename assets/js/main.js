@@ -1,74 +1,52 @@
-// ── NAV: hamburger toggle ──
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.querySelector('.nav-hamburger');
-  const navLinks  = document.querySelector('.nav-links');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = navLinks.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-    // close on link click
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
-    // close on outside click/tap
-    document.addEventListener('click', (e) => {
-      if (navLinks.classList.contains('open') &&
-          !navLinks.contains(e.target) &&
-          !hamburger.contains(e.target)) {
-        navLinks.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
+// ── NAV: hamburger toggle (event-delegated, defensive) ──
+(function () {
+  function setOpen(hamburger, navLinks, open) {
+    navLinks.classList.toggle('open', open);
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  function init() {
+    var hamburger = document.querySelector('.nav-hamburger');
+    var navLinks  = document.querySelector('.nav-links');
+    if (!hamburger || !navLinks) return;
+
+    document.addEventListener('click', function (e) {
+      // Tap on hamburger -> toggle
+      if (e.target.closest && e.target.closest('.nav-hamburger')) {
+        e.preventDefault();
+        setOpen(hamburger, navLinks, !navLinks.classList.contains('open'));
+        return;
+      }
+      // Tap on a link inside the open menu -> close
+      if (e.target.closest && e.target.closest('.nav-links a')) {
+        setOpen(hamburger, navLinks, false);
+        return;
+      }
+      // Tap anywhere else while open -> close
+      if (navLinks.classList.contains('open')) {
+        setOpen(hamburger, navLinks, false);
       }
     });
   }
-});
 
-// ── NAV: mark active page ──
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach(a => {
-  const href = a.getAttribute('href');
-  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-    a.classList.add('active');
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
-});
+})();
 
 // ── SCROLL: fade in sections ──
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// ── CONTACT FORM: basic handling ──
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = contactForm.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    // Netlify handles form submissions automatically when deployed
-    // For local testing this just shows a success message
-    setTimeout(() => {
-      contactForm.innerHTML = `
-        <div style="text-align:center;padding:40px 0;">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" style="margin:0 auto 20px">
-            <circle cx="28" cy="28" r="28" fill="rgba(42,125,225,0.15)"/>
-            <path d="M18 28l8 8 14-16" stroke="#2a7de1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <h3 style="margin-bottom:8px;color:#fff;">Message sent!</h3>
-          <p style="color:#8ea8c3;">We'll be in touch within 1 business day.</p>
-        </div>`;
-    }, 800);
+if (typeof IntersectionObserver !== 'undefined') {
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(function (el) {
+    observer.observe(el);
   });
 }
+
+// Active page marker and contact form submission are handled in data.js
