@@ -163,14 +163,20 @@ nav .container {
 .nav-hamburger {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   cursor: pointer;
-  padding: 4px;
+  /* 44x44 minimum tap target (iOS HIG / WCAG 2.5.5) */
+  width: 44px;
+  height: 44px;
+  padding: 0;
   background: transparent;
   border: none;
   outline: none;
   appearance: none;
   -webkit-appearance: none;
+  touch-action: manipulation;
 }
 .nav-hamburger:focus-visible {
   outline: 2px solid var(--accent);
@@ -183,6 +189,7 @@ nav .container {
   background: #fff;
   border-radius: 2px;
   transition: all 0.3s;
+  pointer-events: none; /* taps go to the button, never to the spans */
 }
 
 /* ── PAGE HERO ── */
