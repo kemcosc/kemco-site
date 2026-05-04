@@ -229,28 +229,5 @@
       }
     });
   </script>
-  <script>
-(function () {
-  var bar = document.createElement('div');
-  bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#000;color:#0f0;font:11px/1.4 monospace;padding:8px;z-index:99999;white-space:pre-wrap;max-height:40vh;overflow:auto;';
-  bar.textContent = 'DEBUG: waiting for load…';
-  function ready(fn){ document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn); }
-  function log(msg){ bar.textContent = msg + '\n' + bar.textContent; }
-  ready(function () {
-    document.body.appendChild(bar);
-    var btn = document.querySelector('.nav-hamburger');
-    var links = document.querySelector('.nav-links');
-    log('btn found: ' + !!btn + ' | links found: ' + !!links);
-    if (!btn) return;
-    var r = btn.getBoundingClientRect();
-    log('btn rect: x=' + Math.round(r.x) + ' y=' + Math.round(r.y) + ' w=' + Math.round(r.width) + ' h=' + Math.round(r.height));
-    var topEl = document.elementFromPoint(r.x + r.width/2, r.y + r.height/2);
-    log('top el at btn center: ' + (topEl ? topEl.tagName + '.' + (topEl.className || '(none)') : 'null'));
-    btn.addEventListener('touchstart', function(){ log('touchstart fired'); }, {passive:true});
-    btn.addEventListener('touchend',   function(){ log('touchend fired'); },   {passive:true});
-    btn.addEventListener('click',      function(){ log('click fired — open=' + (links && links.classList.contains('open'))); });
-  });
-})();
-</script>
 </body>
 </html>
