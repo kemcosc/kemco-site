@@ -1,0 +1,35 @@
+{
+  "page_eyebrow": "Waterproofing & Restoration Certifications",
+  "page_headline": "Our Certifications",
+  "page_subtitle": "Our certifications are proof of our commitment to quality, safety, and excellence in every project we undertake.",
+  "items": [
+    {
+      "name": "Air Barrier Association of America",
+      "logo": "images/certs/abaa.png",
+      "description": "The Air Barrier Association of America is at the forefront of advocating for quality and longevity of building installation, energy efficiency, and healthier communities. Because Kemco shares these priorities, not only are we members of ABAA but we hold certificates for Level 1 and Level 3 installers, as well as a Quality Assurance Program Administrator certificate. If your project requires ABAA certified installers, we're here for you.",
+      "link_text": "Visit ABAA website",
+      "link_url": "https://airbarrier.org/"
+    },
+    {
+      "name": "Texas HUB Certified — Veteran-Owned",
+      "logo": "images/certs/hub-certified.png",
+      "description": "Kemco is proud to be a Texas Historically Underutilized Business (HUB) certified veteran-owned business. HUB's goals are to increase opportunities available to businesses owned by minorities and women. That means when you partner with Kemco on a project, you support U.S. Military Veterans in our area. Together we can drive growth and make a positive impact in the community.",
+      "link_text": "Learn about Texas HUB",
+      "link_url": "https://comptroller.texas.gov/purchasing/vendor/hub/"
+    },
+    {
+      "name": "GCP Technologies — PREPRUFE Certified",
+      "logo": "images/certs/gcp-white.png",
+      "description": "GCP Technologies provides products and resources that help maintain structural integrity for years to come. Kemco works closely with GCP on all of our projects to ensure quality installation and quality material. Kemco and its leadership are certified to install the PREPRUFE System under the GCP PREPRUFE Watertightness Warranty Program.",
+      "link_text": "Learn about GCP Technologies",
+      "link_url": "https://gcpat.com/en/commercial-buildings"
+    },
+    {
+      "name": "NaVOBA — Veteran-Owned Business",
+      "logo": "images/certs/navoba.png",
+      "description": "The National Veteran-Owned Business Association (NaVOBA) creates corporate supplier diversity opportunities for America's Veteran and Service-Disabled Veteran business owners. Kemco's NaVOBA certification reflects our identity as a proud veteran-owned business committed to delivering exceptional service while supporting the veteran community.",
+      "link_text": "Visit NaVOBA",
+      "link_url": "https://navoba.com/"
+    }
+  ]
+}

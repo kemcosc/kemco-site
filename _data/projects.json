@@ -1,0 +1,194 @@
+{
+  "page_eyebrow": "Our Portfolio",
+  "page_headline": "The (water)proof is in the project.",
+  "page_subtitle": "Customer-proven, shared success. Explore our portfolio of landmark commercial waterproofing and restoration projects across the Gulf Coast.",
+  "items": [
+    {
+      "name": "Deco 969 Tower",
+      "location": "Fort Worth, TX",
+      "state_tag": "tx",
+      "type_tag": "mixed-use",
+      "featured": true,
+      "image": "images/projects/deco-969.jpg",
+      "description": "Landmark mixed-use high-rise featuring comprehensive waterproofing and restoration work including expansion joint systems and caulking.",
+      "meta1": "Commercial",
+      "meta2": "High-rise"
+    },
+    {
+      "name": "Caesar's Hotel & Casino",
+      "location": "New Orleans, LA",
+      "state_tag": "la",
+      "type_tag": "hospitality",
+      "featured": true,
+      "image": "images/projects/caesars.jpg",
+      "description": "Comprehensive waterproofing and restoration for a world-class hospitality landmark on Canal Street.",
+      "meta1": "Hospitality",
+      "meta2": "AECOM Tishman"
+    },
+    {
+      "name": "Henderson Ave Mixed Use",
+      "location": "Dallas, TX",
+      "state_tag": "tx",
+      "type_tag": "mixed-use",
+      "featured": false,
+      "image": "images/projects/henderson-ave.jpg",
+      "description": "Full-scope waterproofing for a signature urban mixed-use development.",
+      "meta1": "Mixed Use",
+      "meta2": "Urban"
+    },
+    {
+      "name": "DFW Airport Central Terminal Expansion",
+      "location": "DFW, TX",
+      "state_tag": "tx",
+      "type_tag": "",
+      "featured": false,
+      "image": "images/projects/dfw-airport.jpg",
+      "description": "Large-scale waterproofing services for one of the nation's busiest airports.",
+      "meta1": "Infrastructure",
+      "meta2": "Aviation"
+    },
+    {
+      "name": "Beau Rivage Resort",
+      "location": "Biloxi, MS",
+      "state_tag": "ms",
+      "type_tag": "hospitality",
+      "featured": false,
+      "image": "images/projects/beau-rivage.jpg",
+      "description": "Waterproofing services for the premier Gulf Coast resort and casino.",
+      "meta1": "Hospitality",
+      "meta2": "Resort"
+    },
+    {
+      "name": "Hard Rock Hotel & Casino",
+      "location": "Gulf Coast",
+      "state_tag": "la",
+      "type_tag": "hospitality",
+      "featured": false,
+      "image": "images/projects/hard-rock.jpg",
+      "description": "Below-grade and above-grade waterproofing systems for iconic hospitality venue.",
+      "meta1": "Hospitality",
+      "meta2": "Casino"
+    },
+    {
+      "name": "Texarkana BET Building",
+      "location": "Texarkana, TX",
+      "state_tag": "tx",
+      "type_tag": "",
+      "featured": false,
+      "image": "images/projects/texarkana-bet.jpg",
+      "description": "Commercial waterproofing for a multi-story office and business complex in Texarkana.",
+      "meta1": "Commercial",
+      "meta2": "Office"
+    },
+    {
+      "name": "Hancock Bank",
+      "location": "Gulfport, MS",
+      "state_tag": "ms",
+      "type_tag": "",
+      "featured": false,
+      "image": "images/projects/hancock-bank.jpg",
+      "description": "Waterproofing and restoration services for a prominent Gulf Coast financial high-rise.",
+      "meta1": "Commercial",
+      "meta2": "High-rise"
+    },
+    {
+      "name": "Ward County Jail",
+      "location": "Monahans, TX",
+      "state_tag": "tx",
+      "type_tag": "",
+      "featured": false,
+      "image": "images/projects/ward-county-jail.jpg",
+      "description": "Waterproofing and envelope solutions for a government correctional facility.",
+      "meta1": "Government",
+      "meta2": "Institutional"
+    },
+    {
+      "name": "TAMUC Ag & Multipurpose Facility",
+      "location": "Commerce, TX",
+      "state_tag": "tx",
+      "type_tag": "",
+      "featured": false,
+      "image": "images/projects/tamuc-ag.jpg",
+      "description": "Air and vapor barrier systems for Texas A&M University Commerce's new agricultural and multipurpose arena.",
+      "meta1": "Higher Education",
+      "meta2": "Institutional"
+    },
+    {
+      "name": "Perdido Tower",
+      "location": "Perdido Key, FL",
+      "state_tag": "",
+      "type_tag": "mixed-use",
+      "featured": false,
+      "image": "images/projects/perdido-tower.jpg",
+      "description": "Waterproofing services for a beachfront residential tower on the Gulf Coast.",
+      "meta1": "Residential",
+      "meta2": "High-rise"
+    },
+    {
+      "name": "University of South Alabama \u2014 Marching Band Building",
+      "location": "Mobile, AL",
+      "state_tag": "",
+      "type_tag": "",
+      "featured": false,
+      "image": "images/projects/usa-marching-band.jpg",
+      "description": "Below-grade waterproofing and air barrier systems for a new facility at the University of South Alabama.",
+      "meta1": "Higher Education",
+      "meta2": "Institutional"
+    },
+    {
+      "name": "FWISD Leonard Middle School",
+      "location": "Fort Worth, TX",
+      "state_tag": "tx",
+      "type_tag": "",
+      "featured": false,
+      "image": "images/projects/leonard-middle-school.jpg",
+      "description": "Comprehensive waterproofing for a large-scale Fort Worth ISD school construction project.",
+      "meta1": "Education",
+      "meta2": "K-12"
+    },
+    {
+      "name": "Scurry County EMS Station",
+      "location": "Snyder, TX",
+      "state_tag": "tx",
+      "type_tag": "",
+      "featured": false,
+      "image": "images/projects/scurry-county-ems.png",
+      "description": "Waterproofing and building envelope services for a new county emergency medical services facility.",
+      "meta1": "Government",
+      "meta2": "Public Safety"
+    },
+    {
+      "name": "Ocean Club Baymont Tower 3",
+      "location": "Gulf Shores, AL",
+      "state_tag": "",
+      "type_tag": "mixed-use",
+      "featured": false,
+      "image": "images/projects/ocean-club.jpg",
+      "description": "Waterproofing systems for a beachfront condominium tower on the Gulf Coast.",
+      "meta1": "Residential",
+      "meta2": "High-rise"
+    },
+    {
+      "name": "Dr. Oza Retail Shell",
+      "location": "Burleson, TX",
+      "state_tag": "tx",
+      "type_tag": "mixed-use",
+      "featured": false,
+      "image": "images/projects/oza-retail.jpg",
+      "description": "Waterproofing and caulking for a new retail shell development in Texas.",
+      "meta1": "Retail",
+      "meta2": "Commercial"
+    },
+    {
+      "name": "Sprouts Farmers Market",
+      "location": "Providence Village, TX",
+      "state_tag": "tx",
+      "type_tag": "",
+      "featured": false,
+      "image": "images/projects/sprouts.png",
+      "description": "Waterproofing and sealant systems for a new Sprouts Farmers Market retail location.",
+      "meta1": "Retail",
+      "meta2": "Commercial"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "page_eyebrow": "Waterproofing + Restoration Services",
+  "page_headline": "Preserving projects, building resilience.",
+  "page_subtitle": "Safeguard your structures with extensive expertise in Below-Grade Waterproofing. From groundbreaking to repair, you're in good hands.",
+  "section_eyebrow": "All climates. All systems.",
+  "section_headline": "All covered.",
+  "section_subtext": "Comprehensive waterproofing services for every phase of construction and every type of structure.",
+  "items": [
+    {
+      "title": "Full-scale Waterproofing",
+      "description": "Tailored solutions for new construction plus restoration and maintenance of existing structures.",
+      "image": "images/services/full-waterproofing.jpg"
+    },
+    {
+      "title": "Above & Below-Grade Solutions",
+      "description": "From underground to above, we're dedicated to superior quality, timely delivery, and competitive pricing.",
+      "image": "images/services/above-below-grade.jpg"
+    },
+    {
+      "title": "Brick & Stone Repair",
+      "description": "Tuckpointing · Brick replacement · Stucco repair",
+      "image": "images/services/brick-stone-repair.jpg"
+    },
+    {
+      "title": "Thru Wall Flashing",
+      "description": "Water diversion · Moisture management · Enhancing longevity",
+      "image": "images/services/thru-wall-flashing.jpg"
+    },
+    {
+      "title": "Expansion/Control Joint System Repair",
+      "description": "Interior walls/ceilings · Exterior facade · Parking structure · Roofing",
+      "image": "images/services/expansion-joint.jpg"
+    },
+    {
+      "title": "Caulking & Sealants",
+      "description": "Silicone · Urethane · Polyurea · Epoxy",
+      "image": "images/services/caulking-sealants.jpg"
+    },
+    {
+      "title": "Traffic & Vehicular Deck Coatings",
+      "description": "Elastomeric · Acrylic · Epoxy · PMMA",
+      "image": "images/services/traffic-deck.jpg"
+    },
+    {
+      "title": "Structural Repairs",
+      "description": "Carbon fiber reinforcement · Rebar · Penetrating corrosion inhibitors · Concrete/epoxy mortar",
+      "image": "images/services/structural-repairs.jpg"
+    },
+    {
+      "title": "Cleaning & Sealing",
+      "description": "Clear penetrating sealers · Decorative stains",
+      "image": "images/services/cleaning-sealing.jpg"
+    },
+    {
+      "title": "Sheet Metal Flashing & Trim",
+      "description": "Protecting interfaces · Diverting water intrusion · Decreasing water penetration",
+      "image": "images/services/sheet-metal-flashing.jpg"
+    },
+    {
+      "title": "Roof & Top Deck Systems",
+      "description": "Hot-applied · Garden roof · Decorative paver",
+      "image": "images/services/roof-top-deck.jpg"
+    },
+    {
+      "title": "Air + Vapor Barrier Systems",
+      "description": "Moisture protection · Building envelope solutions – exterior + interior applications",
+      "image": "images/services/air-vapor-barrier.jpg"
+    },
+    {
+      "title": "Elevator & Subterranean & Tunnel Systems",
+      "description": "Drainage · Below-grade waterproofing systems for commercial + industrial structures",
+      "image": "images/services/elevator-systems.png"
+    },
+    {
+      "title": "Thermal Insulation",
+      "description": "Energy efficiency · Emissions reduction · Noise control · Temperature control",
+      "image": "images/services/thermal-insulation.jpg"
+    },
+    {
+      "title": "EIFS / Stucco / Plaster Systems",
+      "description": "Energy efficiency · Moisture control · Design flexibility · Lightweight finishes",
+      "image": "images/services/eifs-stucco.jpg"
+    }
+  ]
+}
