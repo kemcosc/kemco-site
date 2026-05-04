@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Kemco Specialty Contractors</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .contact-layout { display:grid;grid-template-columns:400px 1fr;gap:64px;align-items:start; }
+    .contact-info h2 { margin-bottom:24px; }
+    .info-item { display:flex;gap:16px;margin-bottom:28px;align-items:flex-start; }
+    .info-icon { width:44px;height:44px;background:rgba(42,125,225,.12);border:1px solid rgba(42,125,225,.2);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+    .info-label { font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);margin-bottom:4px; }
+    .info-value { font-size:.98rem;color:var(--text);line-height:1.5; }
+    .info-value a { color:var(--accent); }
+    .contact-form-wrap { background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:48px; }
+    .contact-form-wrap h3 { font-size:1.6rem;margin-bottom:8px; }
+    .contact-form-wrap > p { color:var(--text-muted);font-size:.95rem;margin-bottom:36px; }
+    .form-row { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
+    .form-group { margin-bottom:20px; }
+    .form-group label { display:block;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px; }
+    .form-group label span { color:var(--accent);margin-left:2px; }
+    .form-group input,.form-group textarea,.form-group select { width:100%;background:var(--bg-2);border:1px solid var(--border);border-radius:4px;padding:13px 16px;font-family:'Barlow',sans-serif;font-size:.95rem;color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s; }
+    .form-group input::placeholder,.form-group textarea::placeholder { color:var(--text-dim); }
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus { border-color:var(--accent);box-shadow:0 0 0 3px rgba(42,125,225,.12); }
+    .form-group select option { background:var(--bg-2); }
+    .form-group textarea { resize:vertical;min-height:120px; }
+    .form-submit { display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:8px;flex-wrap:wrap; }
+    .form-submit p { font-size:.82rem;color:var(--text-dim); }
+    .form-submit .btn { min-width:220px;text-align:center; }
+    .service-map { background:var(--bg-2);border-top:1px solid var(--border);padding:96px 0; }
+    .map-img { margin-top:48px;border-radius:8px;overflow:hidden;border:1px solid var(--border); }
+    .map-img img { width:100%;display:block; }
+    @media(max-width:960px){.contact-layout{grid-template-columns:1fr}.contact-form-wrap{padding:32px}}
+    @media(max-width:560px){.form-row{grid-template-columns:1fr}.form-submit{flex-direction:column;align-items:flex-start}.form-submit .btn{width:100%}}
+  </style>
+</head>
+<body>
+  <!-- Hidden form for Netlify Drop detection — do not remove.
+       Netlify Drop (unlike Git builds) requires a pre-rendered static form
+       with every field listed for forms to be registered at deploy time. -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="text" name="company" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <input type="text" name="project" />
+    <input type="text" name="start_date" />
+    <input type="text" name="service" />
+    <textarea name="scope"></textarea>
+    <input type="text" name="bot-field" />
+  </form>
+
+  <nav>
+    <div class="container">
+      <a href="index.html" class="nav-logo"><img src="images/logo-white.png" alt="Kemco" /></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li><li><a href="certifications.html">Certifications</a></li>
+        <li class="nav-cta"><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">Contact Us</div>
+      <h1>Together, let's shape<br>the Gulf Coast.</h1>
+      <p class="subtitle">Ready to start your project? Tell us about your needs and we'll get back to you within one business day.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-info">
+          <h2>Get in touch with us.</h2>
+          <div class="divider"></div>
+          <div class="info-item">
+            <div class="info-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1C6.24 1 4 3.24 4 6c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5zm0 6.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#2a7de1"/></svg></div>
+            <div><div class="info-label">Address</div>
+              <div class="info-value"><span data-site="address_line1">7200 W. University Dr., Suite 204</span><br><span data-site="address_line2">McKinney, TX 75071</span></div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.6 7.8C4.8 10.2 6.8 12.2 9.2 13.4L11 11.6c.2-.2.5-.3.8-.1 1 .3 2 .5 3.2.5.5 0 1 .4 1 1V16c0 .5-.5 1-1 1C7.6 17 1 10.4 1 2c0-.5.5-1 1-1h2.5c.5 0 1 .4 1 1 0 1.2.2 2.2.5 3.2.1.3 0 .6-.2.8L3.6 7.8z" fill="#2a7de1"/></svg></div>
+            <div><div class="info-label">Phone</div>
+              <div class="info-value"><a data-site="phone_link" href="tel:9724882999">(972) 488-2999</a></div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="#2a7de1" stroke-width="1.5" fill="none"/><path d="M2 7l7 4 7-4" stroke="#2a7de1" stroke-width="1.5"/></svg></div>
+            <div><div class="info-label">Service Area</div>
+              <div class="info-value">Gulf Coast · Texas · Louisiana<br>Mississippi · and expanding</div>
+            </div>
+          </div>
+          <div style="margin-top:40px;padding:28px;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;">
+            <h4 style="font-size:.8rem;letter-spacing:.12em;color:var(--text-muted);margin-bottom:16px;">Response time</h4>
+            <p style="font-size:.9rem;margin-bottom:0;">We respond to all project inquiries within <strong style="color:#fff;">1 business day.</strong> For urgent needs, call us directly.</p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h3>Send us a message</h3>
+          <p>Fill out the form below and a member of our team will follow up shortly.</p>
+          <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact" />
+            <p style="display:none;"><label>Don't fill: <input name="bot-field" /></label></p>
+            <div class="form-row">
+              <div class="form-group"><label>Full name <span>*</span></label><input type="text" name="name" placeholder="John Smith" required /></div>
+              <div class="form-group"><label>Company <span>*</span></label><input type="text" name="company" placeholder="ABC General Contractors" required /></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Email <span>*</span></label><input type="email" name="email" placeholder="john@company.com" required /></div>
+              <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="(555) 000-0000" /></div>
+            </div>
+            <div class="form-group"><label>Project name &amp; location <span>*</span></label><input type="text" name="project" placeholder="Tower One — Dallas, TX" required /></div>
+            <div class="form-row">
+              <div class="form-group"><label>Expected start date</label><input type="text" name="start_date" placeholder="Q1 2026 / March 2026" /></div>
+              <div class="form-group"><label>Service needed</label>
+                <select name="service">
+                  <option value="" disabled selected>Select a service…</option>
+                  <option>Full-scale Waterproofing</option><option>Above &amp; Below-Grade Solutions</option>
+                  <option>Brick &amp; Stone Repair</option><option>Expansion Joint System Repair</option>
+                  <option>Caulking &amp; Sealants</option><option>Traffic &amp; Vehicular Deck Coatings</option>
+                  <option>Structural Repairs</option><option>Air + Vapor Barrier Systems</option>
+                  <option>Roof &amp; Top Deck Systems</option><option>Other / Multiple</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group"><label>Scope of work</label><textarea name="scope" placeholder="Describe the project scope, approximate square footage, timeline requirements…"></textarea></div>
+            <div class="form-submit">
+              <p>We'll respond within 1 business day.</p>
+              <button type="submit" class="btn btn-primary">Send message →</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-map">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow" style="justify-content:center;">Where we work</div>
+        <h2>Services expanding the Gulf Coast.</h2>
+      </div>
+      <div class="map-img"><img src="images/kemco-map.jpg" alt="Kemco service area map" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="images/logo-white.png" alt="Kemco" /><p data-site="footer_description">Commercial waterproofing and restoration for the Gulf Coast's most demanding projects.</p></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><p data-site="address_line1">7200 W. University Dr., Suite 204</p><p data-site="address_line2">McKinney, TX 75071</p><p style="margin-top:10px;"><a data-site="phone_link" href="tel:9724882999">(972) 488-2999</a></p></div>
+      </div>
+      <div class="footer-certs"><img src="images/certs/emseal.png" alt="Emseal"><img src="images/certs/tremcocpg-logo.png" alt="Tremco CPG"><img src="images/certs/alltex.png" alt="Alltex"></div>
+      <div class="footer-bottom"><span>© 2026 <span data-site="company_name">Kemco Specialty Contractors</span>. All Rights Reserved.</span><span>McKinney, TX</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

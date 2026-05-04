@@ -1,0 +1,17 @@
+[build]
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Redirect /admin to the CMS panel
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+# Prevent browser caching of data files so CMS edits show immediately
+[[headers]]
+  for = "/_data/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"

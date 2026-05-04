@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waterproofing Services | Kemco Specialty Contractors</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .service-card { background:var(--bg-card); border:1px solid var(--border); border-radius:6px; overflow:hidden; transition:transform .2s,border-color .2s,box-shadow .2s; }
+    .service-card:hover { transform:translateY(-4px); border-color:rgba(42,125,225,.4); box-shadow:0 16px 40px rgba(0,0,0,.4); }
+    .service-card-img { aspect-ratio:16/9; overflow:hidden; }
+    .service-card-img img { width:100%;height:100%;object-fit:cover;transition:transform .4s; }
+    .service-card:hover .service-card-img img { transform:scale(1.05); }
+    .service-card-body { padding:22px 24px; }
+    .service-card-body h3 { font-size:1.1rem;margin-bottom:8px; }
+    .service-card-body p { font-size:.88rem; }
+    .why-us { background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border); }
+    .why-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:28px; }
+    .why-item { background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:32px 28px; }
+    .why-item h3 { font-size:1.15rem;margin-bottom:12px;color:var(--accent); }
+    .why-item p { font-size:.92rem; }
+    .loading-placeholder { text-align:center;padding:60px;color:var(--text-dim);grid-column:1/-1; }
+    @media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.services-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="nav-logo"><img src="images/logo-white.png" alt="Kemco" /></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li><li><a href="certifications.html">Certifications</a></li>
+        <li class="nav-cta"><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow" id="page-eyebrow">Waterproofing + Restoration Services</div>
+      <h1 id="page-headline">Preserving projects, building resilience.</h1>
+      <p class="subtitle" id="page-subtitle">Safeguard your structures with extensive expertise in Below-Grade Waterproofing.</p>
+      <a href="contact.html" class="btn btn-primary">Build confidently now</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow" style="justify-content:center" id="section-eyebrow">All climates. All systems.</div>
+        <h2 id="section-headline">All covered.</h2>
+        <p id="section-subtext">Comprehensive waterproofing services for every phase of construction.</p>
+      </div>
+      <div class="services-grid" id="services-grid">
+        <div class="loading-placeholder">Loading services…</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-us">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow" style="justify-content:center">Why GCs choose Kemco</div>
+        <h2>Where quality meets peace of mind.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><h3>Material Mastery</h3><p>Optimize project success with our expert selection of silicone, urethane, polyurea, and epoxy materials for maximum durability and effectiveness.</p></div>
+        <div class="why-item"><h3>Dynamic Pricing</h3><p>Achieve cost confidence with customized pricing. We meticulously evaluate factors for accurate projections and efficient resource allocation.</p></div>
+        <div class="why-item"><h3>Heart + Hustle</h3><p>Build trust with every seal of confidence through our team-driven culture and experienced leadership. All hustle, all heart, zero hassle.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:48px;"><a href="contact.html" class="btn btn-primary">Get a project estimate</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="images/logo-white.png" alt="Kemco" /><p data-site="footer_description">Commercial waterproofing and restoration for the Gulf Coast's most demanding projects.</p></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><p data-site="address_line1">7200 W. University Dr., Suite 204</p><p data-site="address_line2">McKinney, TX 75071</p><p style="margin-top:10px;"><a data-site="phone_link" href="tel:9724882999">(972) 488-2999</a></p></div>
+      </div>
+      <div class="footer-certs"><img src="images/certs/emseal.png" alt="Emseal"><img src="images/certs/tremcocpg-logo.png" alt="Tremco CPG"><img src="images/certs/alltex.png" alt="Alltex"></div>
+      <div class="footer-bottom"><span>© 2026 <span data-site="company_name">Kemco Specialty Contractors</span>. All Rights Reserved.</span><span>McKinney, TX</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const d = await loadData('services');
+      if (!d) return;
+      setText('#page-eyebrow', d.page_eyebrow);
+      setText('#page-headline', d.page_headline);
+      setText('#page-subtitle', d.page_subtitle);
+      setText('#section-eyebrow', d.section_eyebrow);
+      setText('#section-headline', d.section_headline);
+      setText('#section-subtext', d.section_subtext);
+      const grid = document.getElementById('services-grid');
+      if (d.items) {
+        grid.innerHTML = d.items.map(s => `
+          <div class="service-card">
+            <div class="service-card-img"><img src="${s.image}" alt="${s.title}" loading="lazy" /></div>
+            <div class="service-card-body"><h3>${s.title}</h3><p>${s.description}</p></div>
+          </div>`).join('');
+      }
+    });
+  </script>
+</body>
+</html>

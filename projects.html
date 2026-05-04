@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Kemco Specialty Contractors</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .filter-bar { display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px; }
+    .filter-btn { font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:8px 18px;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--text-muted);cursor:pointer;transition:all .2s; }
+    .filter-btn:hover,.filter-btn.active { background:var(--accent);border-color:var(--accent);color:#fff; }
+    .projects-masonry { display:grid;grid-template-columns:repeat(3,1fr);gap:20px; }
+    .proj-card { background:var(--bg-card);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s; }
+    .proj-card:hover { transform:translateY(-5px);border-color:rgba(42,125,225,.4);box-shadow:0 20px 48px rgba(0,0,0,.5); }
+    .proj-card.featured { grid-column:span 2; }
+    .proj-img { position:relative;overflow:hidden; }
+    .proj-card:not(.featured) .proj-img { aspect-ratio:4/3; }
+    .proj-card.featured .proj-img { aspect-ratio:16/7; }
+    .proj-img img { width:100%;height:100%;object-fit:cover;transition:transform .4s; }
+    .proj-card:hover .proj-img img { transform:scale(1.04); }
+    .proj-body { padding:22px 24px; }
+    .proj-body .tag { margin-bottom:10px; }
+    .proj-body h3 { font-size:1.15rem;margin-bottom:8px; }
+    .proj-body p { font-size:.88rem; }
+    .proj-meta { display:flex;align-items:center;gap:12px;margin-top:14px;padding-top:14px;border-top:1px solid var(--border); }
+    .proj-meta span { font-size:.8rem;color:var(--text-dim);font-family:'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase; }
+    @media(max-width:900px){.projects-masonry{grid-template-columns:repeat(2,1fr)}.proj-card.featured{grid-column:span 2}}
+    @media(max-width:600px){.projects-masonry{grid-template-columns:1fr}.proj-card.featured{grid-column:span 1}}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="nav-logo"><img src="images/logo-white.png" alt="Kemco" /></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li><li><a href="certifications.html">Certifications</a></li>
+        <li class="nav-cta"><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow" id="page-eyebrow">Our Portfolio</div>
+      <h1 id="page-headline">The (water)proof is in the project.</h1>
+      <p class="subtitle" id="page-subtitle">Customer-proven, shared success across the Gulf Coast.</p>
+      <a href="contact.html" class="btn btn-primary">Start your project</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="tx">Texas</button>
+        <button class="filter-btn" data-filter="la">Louisiana</button>
+        <button class="filter-btn" data-filter="ms">Mississippi</button>
+        <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+        <button class="filter-btn" data-filter="mixed-use">Mixed Use</button>
+      </div>
+      <div class="projects-masonry" id="projects-grid">
+        <div style="text-align:center;padding:60px;color:var(--text-dim);grid-column:1/-1;">Loading projects…</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg-2);border-top:1px solid var(--border);padding:80px 0;">
+    <div class="container" style="text-align:center;">
+      <div class="eyebrow" style="justify-content:center;">Ready to build?</div>
+      <h2 style="margin-bottom:16px;">See your project in our portfolio.</h2>
+      <p style="max-width:480px;margin:0 auto 36px;">Join the region's leading general contractors who trust Kemco.</p>
+      <a href="contact.html" class="btn btn-primary">Get your estimate</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="images/logo-white.png" alt="Kemco" /><p data-site="footer_description">Commercial waterproofing and restoration for the Gulf Coast's most demanding projects.</p></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><p data-site="address_line1">7200 W. University Dr., Suite 204</p><p data-site="address_line2">McKinney, TX 75071</p><p style="margin-top:10px;"><a data-site="phone_link" href="tel:9724882999">(972) 488-2999</a></p></div>
+      </div>
+      <div class="footer-certs"><img src="images/certs/emseal.png" alt="Emseal"><img src="images/certs/tremcocpg-logo.png" alt="Tremco CPG"><img src="images/certs/alltex.png" alt="Alltex"></div>
+      <div class="footer-bottom"><span>© 2026 <span data-site="company_name">Kemco Specialty Contractors</span>. All Rights Reserved.</span><span>McKinney, TX</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    let allProjects = [];
+    function renderProjects(filter) {
+      const grid = document.getElementById('projects-grid');
+      const filtered = filter === 'all' ? allProjects : allProjects.filter(p =>
+        p.state_tag === filter || p.type_tag === filter);
+      if (!filtered.length) { grid.innerHTML = '<div style="text-align:center;padding:60px;color:var(--text-dim);grid-column:1/-1;">No projects found for this filter.</div>'; return; }
+      grid.innerHTML = filtered.map(p => `
+        <div class="proj-card${p.featured ? ' featured' : ''}" data-tags="${p.state_tag} ${p.type_tag}">
+          <div class="proj-img"><img src="${p.image}" alt="${p.name}" loading="lazy" /></div>
+          <div class="proj-body">
+            <span class="tag">${p.location}</span>
+            <h3>${p.name}</h3>
+            <p>${p.description}</p>
+            <div class="proj-meta"><span>${p.meta1}</span>${p.meta2 ? `<span>·</span><span>${p.meta2}</span>` : ''}</div>
+          </div>
+        </div>`).join('');
+    }
+    document.addEventListener('DOMContentLoaded', async () => {
+      const d = await loadData('projects');
+      if (!d) return;
+      setText('#page-eyebrow', d.page_eyebrow);
+      setText('#page-headline', d.page_headline);
+      setText('#page-subtitle', d.page_subtitle);
+      allProjects = d.items || [];
+      renderProjects('all');
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderProjects(btn.dataset.filter);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

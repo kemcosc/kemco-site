@@ -1,0 +1,162 @@
+# ============================================================
+# KEMCO SPECIALTY CONTRACTORS — CMS CONFIGURATION
+# Powered by Decap CMS (decapcms.org)
+# ============================================================
+
+backend:
+  name: git-gateway        # Uses Netlify Identity for login
+  branch: main             # Edit this if your branch is named "master"
+
+# Where uploaded images get saved (create this folder in your repo)
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+# Show a live preview of changes (optional — works on Netlify)
+# site_url: https://kemcocontractors.com
+
+collections:
+
+  # ── SITE-WIDE SETTINGS ─────────────────────────────────────
+  - name: "settings"
+    label: "⚙️ Site Settings"
+    files:
+
+      - name: "site"
+        label: "Company Info & Contact"
+        file: "_data/site.json"
+        format: json
+        fields:
+          - { label: "Company Name", name: "company_name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Address Line 1", name: "address_line1", widget: "string" }
+          - { label: "Address Line 2 (City, State, Zip)", name: "address_line2", widget: "string" }
+          - { label: "Phone (display, e.g. (972) 488-2999)", name: "phone_display", widget: "string" }
+          - { label: "Phone (digits only, e.g. 9724882999)", name: "phone_link", widget: "string" }
+          - { label: "Footer Description", name: "footer_description", widget: "text" }
+
+  # ── HOMEPAGE ───────────────────────────────────────────────
+  - name: "pages"
+    label: "📄 Pages"
+    files:
+
+      - name: "home"
+        label: "Homepage"
+        file: "_data/home.json"
+        format: json
+        fields:
+          - label: "Hero Section"
+            name: "hero_eyebrow"
+            widget: "string"
+            hint: "Small text above the headline"
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Subtext", name: "hero_subtext", widget: "text" }
+          - { label: "Hero Button Text", name: "hero_cta_text", widget: "string" }
+          - label: "Stat 1 — Number"
+            name: "stat1_number"
+            widget: "string"
+          - { label: "Stat 1 — Label", name: "stat1_label", widget: "string" }
+          - { label: "Stat 2 — Number", name: "stat2_number", widget: "string" }
+          - { label: "Stat 2 — Label", name: "stat2_label", widget: "string" }
+          - { label: "Stat 3 — Number", name: "stat3_number", widget: "string" }
+          - { label: "Stat 3 — Label", name: "stat3_label", widget: "string" }
+          - label: "Projects Section"
+            name: "projects_eyebrow"
+            widget: "string"
+          - { label: "Projects Headline", name: "projects_headline", widget: "string" }
+          - { label: "Values Section Eyebrow", name: "values_eyebrow", widget: "string" }
+          - { label: "Values Headline", name: "values_headline", widget: "string" }
+          - { label: "Values Body Text", name: "values_body", widget: "text" }
+          - { label: "CTA Banner Headline", name: "cta_headline", widget: "string" }
+          - { label: "CTA Banner Subtext", name: "cta_subtext", widget: "string" }
+          - { label: "Veteran Section Eyebrow", name: "veteran_eyebrow", widget: "string" }
+          - { label: "Veteran Section Headline", name: "veteran_headline", widget: "string" }
+          - { label: "Veteran Section Body", name: "veteran_body", widget: "text" }
+
+  # ── SERVICES ───────────────────────────────────────────────
+  - name: "services_collection"
+    label: "🔧 Services"
+    files:
+      - name: "services"
+        label: "Services Page"
+        file: "_data/services.json"
+        format: json
+        fields:
+          - { label: "Page Eyebrow", name: "page_eyebrow", widget: "string" }
+          - { label: "Page Headline", name: "page_headline", widget: "string" }
+          - { label: "Page Subtitle", name: "page_subtitle", widget: "text" }
+          - { label: "Section Eyebrow", name: "section_eyebrow", widget: "string" }
+          - { label: "Section Headline", name: "section_headline", widget: "string" }
+          - { label: "Section Subtext", name: "section_subtext", widget: "text" }
+          - label: "Services List"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Service Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image URL", name: "image", widget: "string", hint: "Paste an image URL or upload via the media button" }
+
+  # ── PROJECTS ───────────────────────────────────────────────
+  - name: "projects_collection"
+    label: "🏗️ Projects"
+    files:
+      - name: "projects"
+        label: "Projects Page"
+        file: "_data/projects.json"
+        format: json
+        fields:
+          - { label: "Page Eyebrow", name: "page_eyebrow", widget: "string" }
+          - { label: "Page Headline", name: "page_headline", widget: "string" }
+          - { label: "Page Subtitle", name: "page_subtitle", widget: "text" }
+          - label: "Projects List"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.location}}"
+            fields:
+              - { label: "Project Name", name: "name", widget: "string" }
+              - { label: "Location (City, State)", name: "location", widget: "string" }
+              - label: "State Filter Tag"
+                name: "state_tag"
+                widget: "select"
+                options: ["tx", "la", "ms", "al", "fl", "ok", "ar"]
+                hint: "Used for the filter buttons on the Projects page"
+              - label: "Type Filter Tag"
+                name: "type_tag"
+                widget: "select"
+                options:
+                  - { label: "None", value: "" }
+                  - { label: "Hospitality", value: "hospitality" }
+                  - { label: "Mixed Use", value: "mixed-use" }
+                  - { label: "Infrastructure", value: "infrastructure" }
+                  - { label: "Industrial", value: "industrial" }
+              - label: "Featured (spans 2 columns)?"
+                name: "featured"
+                widget: "boolean"
+                default: false
+              - { label: "Project Image URL", name: "image", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Meta Label 1 (e.g. Commercial)", name: "meta1", widget: "string" }
+              - { label: "Meta Label 2 (e.g. High-rise)", name: "meta2", widget: "string" }
+
+  # ── CERTIFICATIONS ─────────────────────────────────────────
+  - name: "certifications_collection"
+    label: "🏅 Certifications"
+    files:
+      - name: "certifications"
+        label: "Certifications Page"
+        file: "_data/certifications.json"
+        format: json
+        fields:
+          - { label: "Page Eyebrow", name: "page_eyebrow", widget: "string" }
+          - { label: "Page Headline", name: "page_headline", widget: "string" }
+          - { label: "Page Subtitle", name: "page_subtitle", widget: "text" }
+          - label: "Certifications List"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Certification Name", name: "name", widget: "string" }
+              - { label: "Logo Image URL", name: "logo", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Link Text (e.g. Visit ABAA website)", name: "link_text", widget: "string" }
+              - { label: "Link URL", name: "link_url", widget: "string" }

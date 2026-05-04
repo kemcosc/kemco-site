@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certifications | Kemco Specialty Contractors</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .cert-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:28px; }
+    .cert-card { background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:48px 40px;display:flex;flex-direction:column;gap:28px;transition:border-color .2s,box-shadow .2s; }
+    .cert-card:hover { border-color:rgba(42,125,225,.4);box-shadow:0 16px 48px rgba(0,0,0,.4); }
+    /* White rounded tile so dark-on-white cert artwork (ABAA, HUB, NaVOBA) reads on our dark cards */
+    .cert-logo { width:120px;height:120px;background:#fff;border-radius:14px;padding:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(0,0,0,.28); }
+    .cert-logo img { max-width:100%;max-height:100%;width:auto;object-fit:contain; }
+    /* GCP's mark is already white-on-transparent; skip the white tile for it */
+    .cert-logo.bare { background:transparent;box-shadow:none;padding:0;width:auto;height:80px;justify-content:flex-start; }
+    .cert-logo.bare img { max-height:80px;max-width:220px; }
+    .cert-body h3 { font-size:1.4rem;margin-bottom:14px;color:#fff; }
+    .cert-body p { font-size:.95rem;line-height:1.75; }
+    .cert-body a { display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-size:.88rem;font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-top:18px;transition:gap .2s; }
+    .cert-body a:hover { gap:10px; }
+    .cert-badges { background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:72px 0; }
+    .badges-grid { display:flex;justify-content:center;gap:40px;flex-wrap:wrap;align-items:stretch; }
+    .badge-item { display:flex;flex-direction:column;align-items:center;gap:14px;flex:0 0 220px; }
+    .badge-tile { width:220px;height:130px;background:#fff;border-radius:12px;padding:22px 28px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(0,0,0,.28);transition:transform .2s,box-shadow .2s; }
+    .badge-item:hover .badge-tile { transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.35); }
+    .badge-tile img { max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain; }
+    .badge-item span { font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);font-family:'Barlow Condensed',sans-serif;font-weight:600; }
+    @media(max-width:768px){.cert-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="nav-logo"><img src="images/logo-white.png" alt="Kemco" /></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li><li><a href="certifications.html">Certifications</a></li>
+        <li class="nav-cta"><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow" id="page-eyebrow">Waterproofing &amp; Restoration Certifications</div>
+      <h1 id="page-headline">Our Certifications</h1>
+      <p class="subtitle" id="page-subtitle">Proof of our commitment to quality, safety, and excellence.</p>
+      <a href="contact.html" class="btn btn-primary">Get an estimate now</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cert-grid" id="cert-grid">
+        <div style="text-align:center;padding:60px;color:var(--text-dim);grid-column:1/-1;">Loading certifications…</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cert-badges">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow" style="justify-content:center;">Trusted partners &amp; suppliers</div>
+        <h2>Industry-leading material partners.</h2>
+      </div>
+      <div class="badges-grid">
+        <div class="badge-item"><div class="badge-tile"><img src="images/certs/emseal.png" alt="Emseal"></div><span>Emseal</span></div>
+        <div class="badge-item"><div class="badge-tile"><img src="images/certs/tremcocpg-logo.png" alt="Tremco CPG"></div><span>Tremco CPG</span></div>
+        <div class="badge-item"><div class="badge-tile"><img src="images/certs/alltex.png" alt="Alltex"></div><span>Alltex</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:80px 0;">
+    <div class="container" style="text-align:center;">
+      <h2 style="margin-bottom:16px;">Need certified waterproofing for your project?</h2>
+      <p style="max-width:480px;margin:0 auto 36px;">Our certifications mean you get verified quality and warranted systems on every job.</p>
+      <a href="contact.html" class="btn btn-primary">Start a conversation</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="images/logo-white.png" alt="Kemco" /><p data-site="footer_description">Commercial waterproofing and restoration for the Gulf Coast's most demanding projects.</p></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><p data-site="address_line1">7200 W. University Dr., Suite 204</p><p data-site="address_line2">McKinney, TX 75071</p><p style="margin-top:10px;"><a data-site="phone_link" href="tel:9724882999">(972) 488-2999</a></p></div>
+      </div>
+      <div class="footer-certs"><img src="images/certs/emseal.png" alt="Emseal"><img src="images/certs/tremcocpg-logo.png" alt="Tremco CPG"><img src="images/certs/alltex.png" alt="Alltex"></div>
+      <div class="footer-bottom"><span>© 2026 <span data-site="company_name">Kemco Specialty Contractors</span>. All Rights Reserved.</span><span>McKinney, TX</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const d = await loadData('certifications');
+      if (!d) return;
+      setText('#page-eyebrow', d.page_eyebrow);
+      setText('#page-headline', d.page_headline);
+      setText('#page-subtitle', d.page_subtitle);
+      const grid = document.getElementById('cert-grid');
+      if (d.items) {
+        grid.innerHTML = d.items.map(c => {
+          const isBare = /gcp|white/i.test(c.logo);
+          return `
+          <div class="cert-card">
+            <div class="cert-logo${isBare ? ' bare' : ''}"><img src="${c.logo}" alt="${c.name}" /></div>
+            <div class="cert-body">
+              <h3>${c.name}</h3>
+              <p>${c.description}</p>
+              <a href="${c.link_url}" target="_blank" rel="noopener">${c.link_text} →</a>
+            </div>
+          </div>`;
+        }).join('');
+      }
+    });
+  </script>
+</body>
+</html>
