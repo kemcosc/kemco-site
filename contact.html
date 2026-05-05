@@ -165,6 +165,7 @@
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
+<script>
 (function () {
   var btn = document.querySelector('.nav-hamburger');
   var links = document.querySelector('.nav-links');
@@ -176,7 +177,6 @@
     btn.classList.toggle('open', open);
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-  // Close the menu when a link inside it is tapped
   links.addEventListener('click', function (e) {
     if (e.target.closest('a')) {
       links.classList.remove('open');
