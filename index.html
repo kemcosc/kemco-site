@@ -231,29 +231,23 @@
   </script>
 <script>
 (function () {
-  var bar = document.createElement('div');
-  bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#000;color:#0f0;font:11px/1.4 monospace;padding:8px;z-index:99999;white-space:pre-wrap;max-height:50vh;overflow:auto;';
-  function log(m){ bar.textContent = m + '\n' + bar.textContent; }
-  document.addEventListener('DOMContentLoaded', function () {
-    document.body.appendChild(bar);
-    log('main.js ran? ' + !!window.__mainJsRan);
-    var btn = document.querySelector('.nav-hamburger');
-    var links = document.querySelector('.nav-links');
-    // Inline handler attached DIRECTLY to btn, completely bypassing main.js
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      links.classList.toggle('open');
-      btn.classList.toggle('open');
-      setTimeout(function () {
-        var cs = getComputedStyle(links);
-        var r = links.getBoundingClientRect();
-        log('--- after inline toggle ---');
-        log('  has .open: ' + links.classList.contains('open'));
-        log('  display: ' + cs.display + '  position: ' + cs.position);
-        log('  rect: x=' + Math.round(r.x) + ' y=' + Math.round(r.y) + ' w=' + Math.round(r.width) + ' h=' + Math.round(r.height));
-        log('  z-index: ' + cs.zIndex + '  bg: ' + cs.backgroundColor);
-      }, 50);
-    });
+  var btn = document.querySelector('.nav-hamburger');
+  var links = document.querySelector('.nav-links');
+  if (!btn || !links) return;
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    var open = !links.classList.contains('open');
+    links.classList.toggle('open', open);
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  // Close the menu when a link inside it is tapped
+  links.addEventListener('click', function (e) {
+    if (e.target.closest('a')) {
+      links.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
   });
 })();
 </script>
