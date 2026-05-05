@@ -43,17 +43,9 @@ async function applySiteData() {
   document.querySelectorAll('[data-site="footer_description"]').forEach(el => el.textContent = s.footer_description);
 }
 
-// ── NAV & HAMBURGER ──────────────────────────────────────────
+// ── NAV (active page marker only) ────────────────────────────
+// Hamburger toggle is inlined in each HTML page for reliability.
 function initNav() {
-  const hamburger = document.querySelector('.nav-hamburger');
-  const navLinks  = document.querySelector('.nav-links');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
-  }
-  // Mark active link
   const current = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(a => {
     const href = a.getAttribute('href');
@@ -68,25 +60,38 @@ function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
   form.addEventListener('submit', function(e) {
-    // On Netlify, the form will submit via standard POST (data-netlify="true")
-    // This handler only applies when running locally (no Netlify)
-    if (!window.location.hostname.includes('netlify') && window.location.hostname !== 'kemcocontractors.com') {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-      setTimeout(() => {
-        form.innerHTML = `
-          <div style="text-align:center;padding:40px 0;">
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" style="margin:0 auto 20px">
-              <circle cx="28" cy="28" r="28" fill="rgba(42,125,225,0.15)"/>
-              <path d="M18 28l8 8 14-16" stroke="#2a7de1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <h3 style="margin-bottom:8px;color:#fff;">Message sent!</h3>
-            <p style="color:#8ea8c3;">We'll be in touch within 1 business day.</p>
-          </div>`;
-      }, 800);
-    }
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    // Build URL-encoded form data with all fields (Netlify expects this format)
+    const formData = new FormData(form);
+    const body = new URLSearchParams(formData).toString();
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body
+    })
+    .then(response => {
+      if (!response.ok) throw new Error('Netlify responded ' + response.status);
+      form.innerHTML = `
+        <div style="text-align:center;padding:40px 0;">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" style="margin:0 auto 20px">
+            <circle cx="28" cy="28" r="28" fill="rgba(42,125,225,0.15)"/>
+            <path d="M18 28l8 8 14-16" stroke="#2a7de1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3 style="margin-bottom:8px;color:#fff;">Message sent!</h3>
+          <p style="color:#8ea8c3;">We'll be in touch within 1 business day.</p>
+        </div>`;
+    })
+    .catch(err => {
+      console.error('Form submission error:', err);
+      btn.textContent = 'Send message →';
+      btn.disabled = false;
+      alert('Sorry, there was a problem sending your message. Please try again, or call us directly.');
+    });
   });
 }
 
