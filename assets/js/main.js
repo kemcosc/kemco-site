@@ -1,3 +1,4 @@
+window.__mainJsRan = true;
 // ── NAV: hamburger toggle (event-delegated, defensive) ──
 (function () {
   function setOpen(hamburger, navLinks, open) {
