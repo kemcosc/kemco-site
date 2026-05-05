@@ -229,26 +229,33 @@
       }
     });
   </script>
-  <script>
+<script>
 (function () {
   var bar = document.createElement('div');
-  bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#000;color:#0f0;font:11px/1.4 monospace;padding:8px;z-index:99999;white-space:pre-wrap;max-height:40vh;overflow:auto;';
-  bar.textContent = 'DEBUG: waiting for load…';
-  function ready(fn){ document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn); }
-  function log(msg){ bar.textContent = msg + '\n' + bar.textContent; }
-  ready(function () {
+  bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#000;color:#0f0;font:11px/1.4 monospace;padding:8px;z-index:99999;white-space:pre-wrap;max-height:50vh;overflow:auto;';
+  document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(bar);
+    function log(m){ bar.textContent = m + '\n' + bar.textContent; }
     var btn = document.querySelector('.nav-hamburger');
     var links = document.querySelector('.nav-links');
-    log('btn found: ' + !!btn + ' | links found: ' + !!links);
-    if (!btn) return;
-    var r = btn.getBoundingClientRect();
-    log('btn rect: x=' + Math.round(r.x) + ' y=' + Math.round(r.y) + ' w=' + Math.round(r.width) + ' h=' + Math.round(r.height));
-    var topEl = document.elementFromPoint(r.x + r.width/2, r.y + r.height/2);
-    log('top el at btn center: ' + (topEl ? topEl.tagName + '.' + (topEl.className || '(none)') : 'null'));
-    btn.addEventListener('touchstart', function(){ log('touchstart fired'); }, {passive:true});
-    btn.addEventListener('touchend',   function(){ log('touchend fired'); },   {passive:true});
-    btn.addEventListener('click',      function(){ log('click fired — open=' + (links && links.classList.contains('open'))); });
+    log('btn=' + !!btn + ' links=' + !!links);
+
+    btn.addEventListener('click', function () {
+      setTimeout(function () {
+        var cs = getComputedStyle(links);
+        var r = links.getBoundingClientRect();
+        log('AFTER CLICK:');
+        log('  has .open: ' + links.classList.contains('open'));
+        log('  display: ' + cs.display);
+        log('  position: ' + cs.position);
+        log('  top: ' + cs.top + ' left: ' + cs.left);
+        log('  visibility: ' + cs.visibility + ' opacity: ' + cs.opacity);
+        log('  z-index: ' + cs.zIndex);
+        log('  rect: x=' + Math.round(r.x) + ' y=' + Math.round(r.y) + ' w=' + Math.round(r.width) + ' h=' + Math.round(r.height));
+        log('  bg: ' + cs.backgroundColor);
+        log('  parent z: ' + getComputedStyle(links.parentElement).zIndex);
+      }, 50);
+    });
   });
 })();
 </script>
