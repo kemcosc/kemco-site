@@ -145,5 +145,27 @@
   });
 })();
 </script>
+  <script>
+(function () {
+  var bar = document.createElement('div');
+  bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#000;color:#0f0;font:11px/1.4 monospace;padding:8px;z-index:99999;white-space:pre-wrap;max-height:50vh;overflow:auto;';
+  function log(m){ bar.textContent = m + '\n' + bar.textContent; }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.body.appendChild(bar);
+    var btn = document.querySelector('.nav-hamburger');
+    var links = document.querySelector('.nav-links');
+    btn.addEventListener('click', function () {
+      setTimeout(function () {
+        var cs = getComputedStyle(links);
+        var r = links.getBoundingClientRect();
+        log('btn.open=' + btn.classList.contains('open') + ' links.open=' + links.classList.contains('open'));
+        log('display=' + cs.display + ' position=' + cs.position);
+        log('rect: x=' + Math.round(r.x) + ' y=' + Math.round(r.y) + ' w=' + Math.round(r.width) + ' h=' + Math.round(r.height));
+        log('children visible: ' + links.querySelectorAll('li').length);
+      }, 50);
+    });
+  });
+})();
+</script>
 </body>
 </html>
