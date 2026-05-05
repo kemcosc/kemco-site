@@ -136,7 +136,6 @@
     btn.classList.toggle('open', open);
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-  // Close the menu when a link inside it is tapped
   links.addEventListener('click', function (e) {
     if (e.target.closest('a')) {
       links.classList.remove('open');
